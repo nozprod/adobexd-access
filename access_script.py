@@ -40,6 +40,22 @@ def automate(email, username, password, csv_path, group):
     for lien in links[0:]:
         # Ouvrir le lien
         driver.get(lien)
+
+        #Ask access if needed
+        try:
+            # Tentative de localisation du bouton "Demander l'accès"
+            access_button = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "[data-auto='requestAccessButton']"))  # Remplacez 'access_button_id' par le bon identifiant ou sélecteur
+            )
+            
+            # Si le bouton est trouvé, cliquez dessus et continuez avec la prochaine itération de la boucle
+            access_button.click()
+            print(f"Access required for {lien}")
+            continue  # Passe au prochain lien
+
+        except:
+            # Si le bouton n'est pas trouvé, le script continue normalement
+            pass
         
         # Cliquez sur le bouton pour inviter
         invite_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '.inviteButton-I4RMS')))
@@ -98,12 +114,12 @@ email_entry.insert(0, "@stellantis.com")  # Pré-remplir le champ
 tk.Label(root, text="Username:").grid(row=1)
 username_entry = tk.Entry(root)
 username_entry.grid(row=1, column=1)
-username_entry.insert(0, "U533621")  # Pré-remplir le champ
+username_entry.insert(0, "U533621")  # Pré-remplir le champ /!\ À supprimer lors de la distribution
 
 tk.Label(root, text="Password:").grid(row=2)
 password_entry = tk.Entry(root, show='*')
 password_entry.grid(row=2, column=1)
-password_entry.insert(0, "vC180890")  # Pré-remplir le champ
+password_entry.insert(0, "vC180890")  # Pré-remplir le champ /!\ À supprimer lors de la distribution
 
 tk.Label(root, text="CSV File:").grid(row=3)
 csv_entry = tk.Entry(root)
