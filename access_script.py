@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import tkinter as tk
 from tkinter import filedialog
 
+from datetime import datetime
 import time
 import pandas as pd
 
@@ -20,6 +21,9 @@ def automate(email, username, password, csv_path, group):
 
     # Initialize driver
     driver = webdriver.Chrome()
+
+    # List to store status
+    report = []
 
     # Connect to Adobe.com
     driver.get(links[0])
@@ -36,10 +40,11 @@ def automate(email, username, password, csv_path, group):
 
     time.sleep(1)  # Stop for 1 second (needed for login acceptance)
 
-    for lien in links[0:]:
+    for link in links[0:]:
         # Open link
-        driver.get(lien)
+        driver.get(link)
 
+        status = {"Link": link, "Status": "NOK"}  # Default status is NOK
         performed = False
 
         try:
@@ -74,10 +79,15 @@ def automate(email, username, password, csv_path, group):
             final_invite_button = driver.find_element(By.ID, 'ccx-ss-share-invite-send-btn')
             final_invite_button.click()
 
+            print(f"Invite sent for {link}")
+            status["Status"] = "OK"
             performed = True
 
+            # Add status to report
+            report.append(status)
+
         except TimeoutException:
-            print(f"No invite button found{lien}")
+            print(f"No invite button found on {link}")
 
         #Ask access if needed
         if not performed:
@@ -88,14 +98,31 @@ def automate(email, username, password, csv_path, group):
                 )
                 
                 access_button.click()
-                print(f"Access required for {lien}")
+                print(f"Access required for {link}")
+                status["Status"] = "NOK - Access required"
+
+                # Add status to report
+                report.append(status)
 
             except TimeoutException:
-                print(f"Access already asked for {lien}")
-                continue   
+                print(f"Access already asked for {link}")
+                status["Status"] = "NOK - Access required"
+
+                # Add status to report
+                report.append(status)
+                continue
+
 
     # Close browser when done
     driver.quit()
+
+    # Generate report
+    date_time_now = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+    report_name = f"{date_time_now}_report.csv"
+
+    df_report = pd.DataFrame(report)
+    df_report.to_csv(report_name, index=False, encoding='utf-8-sig')
+    print("Report generated successfully")
 
 #GUI
 def submit():
