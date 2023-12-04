@@ -191,7 +191,6 @@ username_entry.insert(0, "U533621")  # Pre-filled /!\ TO BE REMOVED WHEN DISTRIB
 tk.Label(root, text="Password:").grid(row=2)
 password_entry = tk.Entry(root, show='*')
 password_entry.grid(row=2, column=1)
-password_entry.insert(0, "vC180890")  # Pre-filled /!\ TO BE REMOVED WHEN DISTRIBUTED
 
 tk.Label(root, text="CSV File:").grid(row=3)
 csv_entry = tk.Entry(root)
