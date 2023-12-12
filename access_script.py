@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager #On remplace la ligne webdriver.Chrome() par webdriver.Chrome(executable_path=ChromeDriverManager().install()) permet de gérer dynamiquement la version de ChromeDriver.
+from webdriver_manager.chrome import ChromeDriverManager
 
 import tkinter as tk
 from tkinter import filedialog
@@ -22,7 +22,7 @@ def automate(email, username, password, csv_path, group):
     total_links = len(links)
 
     # Initialize driver using webdriver_manager
-   driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
     # List to store status
     report = []
