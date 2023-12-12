@@ -4,6 +4,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager #On remplace la ligne webdriver.Chrome() par webdriver.Chrome(executable_path=ChromeDriverManager().install()) permet de gérer dynamiquement la version de ChromeDriver.
 
 import tkinter as tk
 from tkinter import filedialog
@@ -12,16 +14,15 @@ from datetime import datetime
 import time
 import pandas as pd
 
-#Main function
+# Main function
 def automate(email, username, password, csv_path, group):
-
     # Load csv
     df = pd.read_csv(csv_path, header=None)
     links = df[0].tolist()
     total_links = len(links)
 
-    # Initialize driver
-    driver = webdriver.Chrome()
+    # Initialize driver using webdriver_manager
+   driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
     # List to store status
     report = []
@@ -45,8 +46,7 @@ def automate(email, username, password, csv_path, group):
             password_field.send_keys(password)
             password_field.send_keys(Keys.RETURN)
 
-            time.sleep(1)  # Stop for 1 second (needed for login acceptance)
-
+            time.sleep(1)
             WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '.inviteButton-I4RMS')))
 
             logged = True
@@ -56,7 +56,7 @@ def automate(email, username, password, csv_path, group):
             attempt += 1
 
     if logged:
-        print(f"\033[92mLogin succesfull\033[0m")
+        print(f"\033[92mLogin successful\033[0m")
         for index, link in enumerate(links[0:]):
             try:
                 # Open link
@@ -66,32 +66,22 @@ def automate(email, username, password, csv_path, group):
                 performed = False
 
                 try:
-                    # Clic on invite button
-                    invite_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '.inviteButton-I4RMS')))
-                    invite_button = driver.find_element(By.CSS_SELECTOR, '.inviteButton-I4RMS')
+                    # Click on invite button
+                    invite_button = WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located((By.CSS_SELECTOR, '.inviteButton-I4RMS'))
+                    )
                     invite_button.click()
 
-                    # # Fill in a mail
-                    # input_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'ccx-ss-flex-input-textarea')))
-                    # input_field = driver.find_element(By.ID, 'ccx-ss-flex-input-textarea')
-                    # input_field.send_keys('valentin.cazin@stellantis.com')
-                    # input_field.send_keys(Keys.RETURN)
-
-                    # Fill in a group 
-                    input_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'ccx-ss-flex-input-textarea')))
-                    input_field = driver.find_element(By.ID, 'ccx-ss-flex-input-textarea')
+                    # Fill in a group
+                    input_field = WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located((By.ID, 'ccx-ss-flex-input-textarea'))
+                    )
                     input_field.send_keys(group)
                     wait = WebDriverWait(driver, 10)
                     suggestions = wait.until(EC.visibility_of_element_located((By.ID, 'ccx-ss-suggestion-0')))
                     suggestions.click()
 
-                    time.sleep(1)  # Stop for 1 second (needed for invite acceptance, generate error otherwise)
-
-                    # # Select invite mode
-                    # mode_dropdown = driver.find_element(By.ID, 'react-spectrum-2203')
-                    # mode_dropdown.click()
-                    # desired_mode = driver.find_element_by_xpath("//option[text()='Mode_d_invitation']")
-                    # desired_mode.click()
+                    time.sleep(1)  # Stop for 1 second (needed for invite acceptance)
 
                     # Execute invitation
                     final_invite_button = driver.find_element(By.ID, 'ccx-ss-share-invite-send-btn')
@@ -107,14 +97,14 @@ def automate(email, username, password, csv_path, group):
                 except TimeoutException:
                     print(f"\033[91m{index + 1}/{total_links}.\033[0m No invite button found")
 
-                #Ask access if needed
+                # Ask access if needed
                 if not performed:
                     try:
                         # Try to find the request access button
                         access_button = WebDriverWait(driver, 10).until(
                             EC.presence_of_element_located((By.CSS_SELECTOR, "[data-auto='requestAccessButton']"))
                         )
-                        
+
                         access_button.click()
                         print(f"\033[91m{index + 1}/{total_links}.\033[0m Access required")
                         status["Status"] = "NOK - Access required"
@@ -148,7 +138,6 @@ def automate(email, username, password, csv_path, group):
                 report.append(status)
                 continue
 
-
         # Close browser when done
         driver.quit()
 
@@ -163,14 +152,14 @@ def automate(email, username, password, csv_path, group):
     else:
         print(f"\033[91mLogin failed after many attempts\033[0m")
 
-#GUI
+# GUI
 def submit():
     email = email_entry.get()
     username = username_entry.get()
     password = password_entry.get()
     csv_path = csv_entry.get()
     group = group_entry.get()
-    
+
     automate(email, username, password, csv_path, group)
 
 # Main frame
