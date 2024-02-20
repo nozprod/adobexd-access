@@ -1,3 +1,5 @@
+import sys
+import os
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException, StaleElementReferenceException, ElementClickInterceptedException, NoSuchElementException
 from selenium.webdriver.common.keys import Keys
@@ -89,7 +91,11 @@ def automate(email, username, password, csv_path, group):
     # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
     # Initialize driver using local path
-    chromedriver_path = './chromedriver'
+    if getattr(sys, 'frozen', False):
+        chromedriver_path = os.path.join(sys._MEIPASS, 'chromedriver.exe')
+    else:
+        chromedriver_path = './chromedriver'
+
     s = Service(executable_path=chromedriver_path)
     driver = webdriver.Chrome(service=s)
 
