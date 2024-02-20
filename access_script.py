@@ -88,6 +88,7 @@ def automate(email, username, password, csv_path, group):
     # Initialize driver using webdriver_manager
     # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
+    # Initialize driver using local path
     chromedriver_path = './chromedriver'
     s = Service(executable_path=chromedriver_path)
     driver = webdriver.Chrome(service=s)
