@@ -86,7 +86,11 @@ def automate(email, username, password, csv_path, group):
     total_links = len(links)
 
     # Initialize driver using webdriver_manager
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+    chromedriver_path = './chromedriver'
+    s = Service(executable_path=chromedriver_path)
+    driver = webdriver.Chrome(service=s)
 
     # List to store status
     report = []
