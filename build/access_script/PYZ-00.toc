@@ -134,6 +134,38 @@
    'C:\\Users\\Valentin '
    'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\certifi\\core.py',
    'PYMODULE'),
+  ('charset_normalizer',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\__init__.py',
+   'PYMODULE'),
+  ('charset_normalizer.api',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\api.py',
+   'PYMODULE'),
+  ('charset_normalizer.cd',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\cd.py',
+   'PYMODULE'),
+  ('charset_normalizer.constant',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\constant.py',
+   'PYMODULE'),
+  ('charset_normalizer.legacy',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\legacy.py',
+   'PYMODULE'),
+  ('charset_normalizer.models',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\models.py',
+   'PYMODULE'),
+  ('charset_normalizer.utils',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\utils.py',
+   'PYMODULE'),
+  ('charset_normalizer.version',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\charset_normalizer\\version.py',
+   'PYMODULE'),
   ('cmd', 'C:\\Program Files\\Python312\\Lib\\cmd.py', 'PYMODULE'),
   ('code', 'C:\\Program Files\\Python312\\Lib\\code.py', 'PYMODULE'),
   ('codeop', 'C:\\Program Files\\Python312\\Lib\\codeop.py', 'PYMODULE'),
@@ -240,6 +272,26 @@
   ('difflib', 'C:\\Program Files\\Python312\\Lib\\difflib.py', 'PYMODULE'),
   ('dis', 'C:\\Program Files\\Python312\\Lib\\dis.py', 'PYMODULE'),
   ('doctest', 'C:\\Program Files\\Python312\\Lib\\doctest.py', 'PYMODULE'),
+  ('dotenv',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\dotenv\\__init__.py',
+   'PYMODULE'),
+  ('dotenv.ipython',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\dotenv\\ipython.py',
+   'PYMODULE'),
+  ('dotenv.main',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\dotenv\\main.py',
+   'PYMODULE'),
+  ('dotenv.parser',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\dotenv\\parser.py',
+   'PYMODULE'),
+  ('dotenv.variables',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\dotenv\\variables.py',
+   'PYMODULE'),
   ('email',
    'C:\\Program Files\\Python312\\Lib\\email\\__init__.py',
    'PYMODULE'),
@@ -320,6 +372,9 @@
    'PYMODULE'),
   ('http.cookiejar',
    'C:\\Program Files\\Python312\\Lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('http.cookies',
+   'C:\\Program Files\\Python312\\Lib\\http\\cookies.py',
    'PYMODULE'),
   ('http.server',
    'C:\\Program Files\\Python312\\Lib\\http\\server.py',
@@ -2358,6 +2413,74 @@
   ('queue', 'C:\\Program Files\\Python312\\Lib\\queue.py', 'PYMODULE'),
   ('quopri', 'C:\\Program Files\\Python312\\Lib\\quopri.py', 'PYMODULE'),
   ('random', 'C:\\Program Files\\Python312\\Lib\\random.py', 'PYMODULE'),
+  ('requests',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\__init__.py',
+   'PYMODULE'),
+  ('requests.__version__',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\__version__.py',
+   'PYMODULE'),
+  ('requests._internal_utils',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\_internal_utils.py',
+   'PYMODULE'),
+  ('requests.adapters',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\adapters.py',
+   'PYMODULE'),
+  ('requests.api',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\api.py',
+   'PYMODULE'),
+  ('requests.auth',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\auth.py',
+   'PYMODULE'),
+  ('requests.certs',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\certs.py',
+   'PYMODULE'),
+  ('requests.compat',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\compat.py',
+   'PYMODULE'),
+  ('requests.cookies',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\cookies.py',
+   'PYMODULE'),
+  ('requests.exceptions',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\exceptions.py',
+   'PYMODULE'),
+  ('requests.hooks',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\hooks.py',
+   'PYMODULE'),
+  ('requests.models',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\models.py',
+   'PYMODULE'),
+  ('requests.packages',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\packages.py',
+   'PYMODULE'),
+  ('requests.sessions',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\sessions.py',
+   'PYMODULE'),
+  ('requests.status_codes',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\status_codes.py',
+   'PYMODULE'),
+  ('requests.structures',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\structures.py',
+   'PYMODULE'),
+  ('requests.utils',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\requests\\utils.py',
+   'PYMODULE'),
   ('runpy', 'C:\\Program Files\\Python312\\Lib\\runpy.py', 'PYMODULE'),
   ('secrets', 'C:\\Program Files\\Python312\\Lib\\secrets.py', 'PYMODULE'),
   ('selectors', 'C:\\Program Files\\Python312\\Lib\\selectors.py', 'PYMODULE'),
@@ -2868,6 +2991,10 @@
    'C:\\Users\\Valentin '
    'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\urllib3\\contrib\\__init__.py',
    'PYMODULE'),
+  ('urllib3.contrib.pyopenssl',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\urllib3\\contrib\\pyopenssl.py',
+   'PYMODULE'),
   ('urllib3.contrib.socks',
    'C:\\Users\\Valentin '
    'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\urllib3\\contrib\\socks.py',
@@ -2947,6 +3074,74 @@
   ('uuid', 'C:\\Program Files\\Python312\\Lib\\uuid.py', 'PYMODULE'),
   ('webbrowser',
    'C:\\Program Files\\Python312\\Lib\\webbrowser.py',
+   'PYMODULE'),
+  ('webdriver_manager',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\__init__.py',
+   'PYMODULE'),
+  ('webdriver_manager.chrome',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\chrome.py',
+   'PYMODULE'),
+  ('webdriver_manager.core',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\__init__.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.archive',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\archive.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.config',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\config.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.constants',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\constants.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.download_manager',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\download_manager.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.driver',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\driver.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.driver_cache',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\driver_cache.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.file_manager',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\file_manager.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.http',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\http.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.logger',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\logger.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.manager',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\manager.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.os_manager',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\os_manager.py',
+   'PYMODULE'),
+  ('webdriver_manager.core.utils',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\core\\utils.py',
+   'PYMODULE'),
+  ('webdriver_manager.drivers',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\drivers\\__init__.py',
+   'PYMODULE'),
+  ('webdriver_manager.drivers.chrome',
+   'C:\\Users\\Valentin '
+   'Cazin\\AppData\\Roaming\\Python\\Python312\\site-packages\\webdriver_manager\\drivers\\chrome.py',
    'PYMODULE'),
   ('xml', 'C:\\Program Files\\Python312\\Lib\\xml\\__init__.py', 'PYMODULE'),
   ('xml.dom',
