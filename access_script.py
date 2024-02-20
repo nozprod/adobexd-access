@@ -14,6 +14,7 @@ from datetime import datetime
 import time
 import pandas as pd
 
+
 #Login check
 def try_login(driver, email, username, password, links):
 
@@ -48,6 +49,34 @@ def try_login(driver, email, username, password, links):
 
     print(f"\033[91mLogin failed after many attempts\033[0m")
     return False
+
+
+# Check requested access
+def check_and_process_access_requests(driver, domains_allowed):
+    try:
+        access_requests = WebDriverWait(driver, 0.1).until(
+            EC.presence_of_all_elements_located((By.CSS_SELECTOR, '.ccx-ss-request-card'))
+        )
+
+        for request in access_requests:
+            email_element = request.find_element(By.CSS_SELECTOR, ".ccx-ss-request-card-second-line")
+            email_text = email_element.text
+            domain_of_email = email_text.split('@')[-1]
+
+            if any(domain_of_email.endswith(domain_allowed) for domain_allowed in domains_allowed):
+                accept_button = request.find_element(By.CSS_SELECTOR, ".ccx-ss-collaborators-list-request-accept-btn")
+                accept_button.click()
+                print(f"Access request from {email_text} accepted.")
+            else:
+                decline_button = request.find_element(By.CSS_SELECTOR, ".ccx-ss-collaborators-list-request-decline-btn")
+                decline_button.click()
+                print(f"Access request from {email_text} rejected.")
+    except TimeoutException:
+        pass
+
+# Allowed domains
+domains_allowed = ["@stellantis.com", "@external.stellantis.com"]
+
 
 # Main function
 def automate(email, username, password, csv_path, group):
@@ -88,6 +117,10 @@ def automate(email, username, password, csv_path, group):
                         input_field = WebDriverWait(driver, 20).until(
                             EC.presence_of_element_located((By.ID, 'ccx-ss-flex-input-textarea'))
                         )
+
+                        # Check access requests
+                        check_and_process_access_requests(driver, domains_allowed)
+
                         input_field.send_keys(group)
                         wait = WebDriverWait(driver, 20)
                         suggestions = wait.until(EC.visibility_of_element_located((By.ID, 'ccx-ss-suggestion-0')))
