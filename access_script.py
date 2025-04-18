@@ -170,12 +170,12 @@ root.title("Adobe XD - Access script")
 tk.Label(root, text="Email:").grid(row=0)
 email_entry = tk.Entry(root)
 email_entry.grid(row=0, column=1)
-email_entry.insert(0, "@stellantis.com")  # Pre-filled
+email_entry.insert(0, "")
 
 tk.Label(root, text="Username:").grid(row=1)
 username_entry = tk.Entry(root)
 username_entry.grid(row=1, column=1)
-username_entry.insert(0, "U533621")  # Pre-filled /!\ TO BE REMOVED WHEN DISTRIBUTED
+username_entry.insert(0,"")
 
 tk.Label(root, text="Password:").grid(row=2)
 password_entry = tk.Entry(root, show='*')
@@ -189,7 +189,7 @@ tk.Button(root, text="Browse", command=lambda: csv_entry.insert(0, filedialog.as
 tk.Label(root, text="Group:").grid(row=4)
 group_entry = tk.Entry(root)
 group_entry.grid(row=4, column=1)
-group_entry.insert(0, "UX_Plateau_")  # Pre-filled /!\ NEXT STEP --> LOAD FROM A CSV
+group_entry.insert(0, "")
 
 # Execution button
 tk.Button(root, text="Execute", command=submit).grid(row=5, columnspan=2)
